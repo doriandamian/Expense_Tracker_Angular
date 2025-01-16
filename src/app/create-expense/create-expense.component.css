@@ -5,12 +5,22 @@
 p {
   margin: 20px 20px;
   text-decoration: underline;
+  text-underline-position: under;
 }
 
 .content {
   display: grid;
-  width: 30%;
+  width: 25%;
   margin: 10px 20px;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 10px;
+  grid-template-columns: 40% 60%;
+  row-gap: 15px;
+}
+
+button {
+  margin:10px 20px 20px 20px;
+  width: 80px;
+  height: 30px;
+  color: aliceblue;
+  background-color: gray; 
+  border: none;
 }
