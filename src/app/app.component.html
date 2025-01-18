@@ -1,5 +1,8 @@
 <app-navbar></app-navbar>
 <div class="page">
   <app-expense></app-expense>
+  @if (viewCreateExpense === true) {
   <app-create-expense></app-create-expense>
+  }
+  <button id="addExpense" (click)="onAddExpense($event)">Add expense</button>
 </div>

@@ -13,4 +13,9 @@ import { ExpenseComponent } from "./expense/expense.component";
 })
 export class AppComponent {
   title = 'Expense_Tracker';
+  viewCreateExpense: boolean = true;
+
+  onAddExpense(event: Event): void {
+    this.viewCreateExpense = !this.viewCreateExpense;
+  }
 }

@@ -1,10 +1,15 @@
 <nav class="navbar">
-        <a class="selectedLink" href="">MON</a>
-        <a href="">TUES</a>
-        <a href="">WED</a>
-        <a href="">THUR</a>
-        <a href="">FRI</a>
-        <a href="">SAT</a>
-        <a href="">SUN</a>
-        <a id="summary" href="">SUMMARY</a>
+  <!-- <a id="monday" href="">MON</a>
+        <a id="tuesday" href="">TUES</a>
+        <a id="wednesday" href="">WED</a>
+        <a id="thursday" href="">THUR</a>
+        <a id="friday" href="">FRI</a>
+        <a id="saturday" href="">SAT</a>
+        <a id="sunday" href="">SUN</a>
+        <a id="summary" href="">SUMMARY</a> -->
+  @for (day of days; track day.id) {
+  <a [id]="day.id" [class.selectedLink]="selectedDay === day.id" (click)="onSelectDay(day.id, $event)" href="">{{
+    day.label
+  }}</a>
+  }
 </nav>
