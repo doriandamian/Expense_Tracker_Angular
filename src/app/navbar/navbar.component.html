@@ -1,15 +1,50 @@
 <nav class="navbar">
-  <!-- <a id="monday" href="">MON</a>
-        <a id="tuesday" href="">TUES</a>
-        <a id="wednesday" href="">WED</a>
-        <a id="thursday" href="">THUR</a>
-        <a id="friday" href="">FRI</a>
-        <a id="saturday" href="">SAT</a>
-        <a id="sunday" href="">SUN</a>
-        <a id="summary" href="">SUMMARY</a> -->
-  @for (day of days; track day.id) {
-  <a [id]="day.id" [class.selectedLink]="selectedDay === day.id" (click)="onSelectDay(day.id, $event)" href="">{{
-    day.label
-  }}</a>
-  }
+  <a
+    id="monday"
+    href="monday"
+    [ngClass]="{ selectedLink: day === 'monday' }"
+    >MON</a
+  >
+  <a
+    id="tuesday"
+    href="/tuesday"
+    [ngClass]="{ selectedLink: day === 'tuesday' }"
+    >TUES</a
+  >
+  <a
+    id="wednesday"
+    href="/wednesday"
+    [ngClass]="{ selectedLink: day === 'wednesday' }"
+    >WED</a
+  >
+  <a
+    id="thursday"
+    href="/thursday"
+    [ngClass]="{ selectedLink: day === 'thursday' }"
+    >THUR</a
+  >
+  <a
+    id="friday"
+    href="/friday"
+    [ngClass]="{ selectedLink: day === 'friday' }"
+    >FRI</a
+  >
+  <a
+    id="saturday"
+    href="/saturday"
+    [ngClass]="{ selectedLink: day === 'saturday' }"
+    >SAT</a
+  >
+  <a
+    id="sunday"
+    href="/sunday"
+    [ngClass]="{ selectedLink: day === 'sunday' }"
+    >SUN</a
+  >
+  <a
+    id="summary"
+    href="/summary"
+    [ngClass]="{ selectedLink: day === 'summary' }"
+    >SUMMARY</a
+  >
 </nav>

@@ -1,19 +1,27 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./navbar/navbar.component";
-import { CreateExpenseComponent } from "./create-expense/create-expense.component";
-import { ExpenseComponent } from "./expense/expense.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, CreateExpenseComponent, ExpenseComponent],
+  imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'Expense_Tracker';
   viewCreateExpense: boolean = true;
+  selectedDay: string = '';
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.route.data.subscribe((data) => {
+      this.selectedDay = data['day'];
+      console.log(this.selectedDay);
+    });
+  }
 
   onAddExpense(event: Event): void {
     this.viewCreateExpense = !this.viewCreateExpense;

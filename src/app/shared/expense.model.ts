@@ -1,8 +1,8 @@
-import { Day } from "./day.model";
+
 
 export interface Expense {
     id: number,
-    day: Day,
+    day: string,
     category: string,
     amount: number
 }

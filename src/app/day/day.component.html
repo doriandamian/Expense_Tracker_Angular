@@ -1,0 +1,9 @@
+<app-navbar [day]="selectedDay"></app-navbar>
+<div class="page">
+  @for (expense of expenses; track expense.id) {
+  <app-expense [expense]="expense"></app-expense>
+  } @if (viewCreateExpense === true) {
+  <app-create [day]="selectedDay" [expenseNumber]="expenses.length + 1"></app-create>
+  }
+  <button id="addExpense" (click)="onAddExpense($event)">Add expense</button>
+</div>

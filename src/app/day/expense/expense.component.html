@@ -1,0 +1,12 @@
+<div class="box">
+  <div class="info">
+    <div class="category">{{ expense.category }}</div>
+    <div class="amount">{{ expense.amount }}</div>
+  </div>
+  <div class="edit" (click)="onEditButton()">
+    <img src="edit.svg" alt="" />
+  </div>
+  <div class="delete" (click)="deleteExpense(expense.id)">
+    <img src="delete.svg" alt="" />
+  </div>
+</div>
