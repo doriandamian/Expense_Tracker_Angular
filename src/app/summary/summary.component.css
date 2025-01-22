@@ -10,22 +10,11 @@
   overflow-y: auto;
 }
 
-#addExpense {
-  color: aliceblue;
-  background-color: gray;
-  padding: 0 20px;
-}
-
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .dailyTotal {
   color: aliceblue;
   background-color: black;
   padding: 0 20px;
+  width: max-content;
 }
 
 app-navigation {

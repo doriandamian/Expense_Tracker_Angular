@@ -1,0 +1,14 @@
+<div class="navi">
+  <a
+    id="left"
+    [style.visibility]="hideLeftButton ? 'hidden' : 'visible'"
+    [href]="daysOfWeekLabels[dayIndex - 1]"
+    >{{ leftButtonLabel }}</a
+  >
+  <a
+    id="right"
+    [style.visibility]="hideRightButton ? 'hidden' : 'visible'"
+    [href]="daysOfWeekLabels[dayIndex + 1]"
+    >{{ rightButtonLabel }}</a
+  >
+</div>

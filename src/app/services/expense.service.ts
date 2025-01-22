@@ -24,6 +24,21 @@ export class ExpenseService {
     this.saveExpenses();
   }
 
+  editExpense(expenseId: number, category?: string, amount?: number) {
+    this.expenses.forEach(expense => {
+      if(expense.id === expenseId){
+        if( category != undefined){
+          expense.category = category;
+        }
+        if(amount != undefined){
+          expense.amount = amount;
+        }
+      }
+    });
+    this.saveExpenses();
+    window.location.reload();
+  }
+
   deleteExpense(expenseId: number): void {
     this.expenses = this.expenses.filter(expense => expense.id !== expenseId);
     this.saveExpenses();

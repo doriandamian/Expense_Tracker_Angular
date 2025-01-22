@@ -1,0 +1,13 @@
+.navi {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+a {
+  color: aliceblue;
+  background-color: gray;
+  text-align: center;
+  width: 15%;
+  text-decoration: none;
+}

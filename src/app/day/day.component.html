@@ -5,5 +5,11 @@
   } @if (viewCreateExpense === true) {
   <app-create [day]="selectedDay" [expenseNumber]="expenses.length + 1"></app-create>
   }
-  <button id="addExpense" (click)="onAddExpense($event)">Add expense</button>
+  <div class="footer">
+    <button id="addExpense" (click)="onAddExpense($event)">Add expense</button>
+    <div class="dailyTotal">
+      Daily Total: {{dailyTotal}}
+    </div>
+  </div>
+  <app-navigation [day]="selectedDay"></app-navigation>
 </div>

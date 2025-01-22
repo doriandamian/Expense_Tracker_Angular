@@ -1,0 +1,18 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.amountTD {
+    text-align: right;
+}
+
+.categoryTD {
+    font-weight: normal;
+}
+
+th, td {
+    border: 1px solid;
+    padding: 10px;
+}
