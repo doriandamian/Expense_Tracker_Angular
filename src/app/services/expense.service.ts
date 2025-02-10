@@ -14,9 +14,9 @@ export class ExpenseService {
   getExpenses(): Expense[] {
     return this.expenses;
   }
-  
+
   getExpensesByDay(day: string): Expense[] {
-    return this.expenses.filter(expense => expense.day === day);
+    return this.expenses.filter((expense) => expense.day === day);
   }
 
   addExpense(expense: Expense): void {
@@ -25,12 +25,12 @@ export class ExpenseService {
   }
 
   editExpense(expenseId: number, category?: string, amount?: number) {
-    this.expenses.forEach(expense => {
-      if(expense.id === expenseId){
-        if( category != undefined){
+    this.expenses.forEach((expense) => {
+      if (expense.id === expenseId) {
+        if (category != undefined) {
           expense.category = category;
         }
-        if(amount != undefined){
+        if (amount != undefined) {
           expense.amount = amount;
         }
       }
@@ -40,7 +40,7 @@ export class ExpenseService {
   }
 
   deleteExpense(expenseId: number): void {
-    this.expenses = this.expenses.filter(expense => expense.id !== expenseId);
+    this.expenses = this.expenses.filter((expense) => expense.id !== expenseId);
     this.saveExpenses();
     window.location.reload();
   }

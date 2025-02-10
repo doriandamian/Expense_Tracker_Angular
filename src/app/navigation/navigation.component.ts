@@ -4,7 +4,7 @@ import { Component, Input, SimpleChanges } from '@angular/core';
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [NgStyle],
+  imports: [],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css',
 })
@@ -36,9 +36,11 @@ export class NavigationComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.dayIndex = this.daysOfWeekLabels.indexOf(this.day);
-    this.leftButtonLabel = this.capitalize(this.daysOfWeekLabels[this.dayIndex - 1]);
+    this.leftButtonLabel = this.capitalize(
+      this.daysOfWeekLabels[this.dayIndex - 1],
+    );
     this.rightButtonLabel = this.capitalize(
-      this.daysOfWeekLabels[this.dayIndex + 1]
+      this.daysOfWeekLabels[this.dayIndex + 1],
     );
     if (this.leftButtonLabel === 'None') this.hideLeftButton = true;
     if (this.rightButtonLabel === 'None') this.hideRightButton = true;

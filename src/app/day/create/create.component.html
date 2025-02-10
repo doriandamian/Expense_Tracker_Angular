@@ -1,5 +1,5 @@
 <div class="box" [formGroup]="createExpenseForm">
-  <p>Expense {{expenseNumber}}</p>
+  <p>Expense {{ expenseNumber }}</p>
   <div class="content">
     <label for="category">Category</label>
     <select id="category" formControlName="category" required>
@@ -10,7 +10,13 @@
     </select>
 
     <label for="amount">Amount</label>
-    <input type="number" id="amount" formControlName="amount" required min="1"/>
+    <input
+      type="number"
+      id="amount"
+      formControlName="amount"
+      required
+      min="1"
+    />
   </div>
   <button id="saveButton" (click)="onSave()">Save</button>
 </div>

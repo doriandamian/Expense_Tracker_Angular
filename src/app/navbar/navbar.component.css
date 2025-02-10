@@ -1,27 +1,27 @@
 .navbar {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 0;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0;
 }
 
 a {
-    padding: 12px;
-    text-align: center;
-    border: 2px solid;
-    text-decoration: none;
-    color: black;
-    margin: 0 -2px 0 0;
+  padding: 12px;
+  text-align: center;
+  border: 2px solid;
+  text-decoration: none;
+  color: black;
+  margin: 0 -2px 0 0;
 }
 
 #summary {
-    color: aliceblue;
-    background-color: black;
-    border-color: black;
+  color: aliceblue;
+  background-color: black;
+  border-color: black;
 }
 
 .selectedLink {
-    background-color:gray;
-    border-color: black;
-    color: aliceblue;
+  background-color: gray;
+  border-color: black;
+  color: aliceblue;
 }

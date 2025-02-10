@@ -1,7 +1,10 @@
 <app-navbar day="summary"></app-navbar>
-<div class="page">
-  <h1>Your weekly expense summary</h1>
-  <app-table [expenses]="expenses"></app-table>
+
+<div class="borderDiv">
+  <div class="page">
+    <h1>Your weekly expense summary</h1>
+    <app-table [expenses]="expenses"></app-table>
+  </div>
   <div class="dailyTotal">Daily Total: {{ totalExpenses }}</div>
   <app-navigation day="summary"></app-navigation>
 </div>

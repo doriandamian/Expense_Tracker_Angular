@@ -1,7 +1,12 @@
 import { Component, inject, Input } from '@angular/core';
 import { Expense } from '../../shared/expense.model';
 import { ExpenseService } from '../../services/expense.service';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-expense',
@@ -20,11 +25,11 @@ export class ExpenseComponent {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-      this.editExpenseForm = this.fb.group({
-        category: ['', Validators.required],
-        amount: ['', [Validators.required, Validators.min(1)]],
-      });
-    }
+    this.editExpenseForm = this.fb.group({
+      category: ['', Validators.required],
+      amount: ['', [Validators.required, Validators.min(1)]],
+    });
+  }
 
   deleteExpense(id: number) {
     this.expenseService.deleteExpense(id);
@@ -41,11 +46,14 @@ export class ExpenseComponent {
   }
 
   onEdit() {
-    if(this.editExpenseForm.valid){
+    if (this.editExpenseForm.valid) {
       const values = this.editExpenseForm.value;
-      this.expenseService.editExpense(this.expense.id, values.category, values.amount);
+      this.expenseService.editExpense(
+        this.expense.id,
+        values.category,
+        values.amount,
+      );
       this.isEditing = false;
-      console.log("Edited: ", values.category, values.amount);
     }
   }
 }

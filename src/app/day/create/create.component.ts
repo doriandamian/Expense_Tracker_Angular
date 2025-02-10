@@ -17,7 +17,7 @@ import { Expense } from '../../shared/expense.model';
 })
 export class CreateComponent {
   @Input({ required: true }) day!: string;
-  @Input({required: true}) expenseNumber !: number;
+  @Input({ required: true }) expenseNumber!: number;
   createExpenseForm!: FormGroup;
 
   expenseService = inject(ExpenseService);
@@ -39,7 +39,6 @@ export class CreateComponent {
         category: this.createExpenseForm.value.category,
         amount: this.createExpenseForm.value.amount,
       };
-      console.log('Saved Expense: ', expense);
       this.expenseService.addExpense(expense);
       window.location.reload();
     }

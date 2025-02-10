@@ -31,7 +31,7 @@ export class TableComponent {
 
     days.forEach((day) => {
       const dayExpenses = this.expenses.filter(
-        (expense) => expense.day === day
+        (expense) => expense.day === day,
       );
       if (dayExpenses.length != 0) {
         const dailyExpense: WeeklyExpenses = {
@@ -46,7 +46,6 @@ export class TableComponent {
         weeklyExpenses.push(dailyExpense);
       }
     });
-    console.log('Weekly Expenses: ', weeklyExpenses);
     return weeklyExpenses;
   }
 }

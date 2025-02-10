@@ -1,15 +1,19 @@
 <app-navbar [day]="selectedDay"></app-navbar>
-<div class="page">
-  @for (expense of expenses; track expense.id) {
-  <app-expense [expense]="expense"></app-expense>
-  } @if (viewCreateExpense === true) {
-  <app-create [day]="selectedDay" [expenseNumber]="expenses.length + 1"></app-create>
-  }
+
+<div class="borderDiv">
+  <div class="page">
+    @for (expense of expenses; track expense.id) {
+    <app-expense [expense]="expense"></app-expense>
+    } @if (viewCreateExpense === true) {
+    <app-create
+      [day]="selectedDay"
+      [expenseNumber]="expenses.length + 1"
+    ></app-create>
+    }
+  </div>
   <div class="footer">
     <button id="addExpense" (click)="onAddExpense($event)">Add expense</button>
-    <div class="dailyTotal">
-      Daily Total: {{dailyTotal}}
-    </div>
+    <div class="dailyTotal">Daily Total: {{ dailyTotal }}</div>
   </div>
   <app-navigation [day]="selectedDay"></app-navigation>
 </div>
