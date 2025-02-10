@@ -13,7 +13,7 @@ import {
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './expense.component.html',
-  styleUrl: './expense.component.css',
+  styleUrl: './expense.component.scss',
 })
 export class ExpenseComponent {
   @Input({ required: true }) expense!: Expense;

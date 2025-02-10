@@ -1,41 +1,16 @@
 <nav class="navbar">
-  <a id="monday" href="monday" [ngClass]="{ selectedLink: day === 'monday' }"
-    >MON</a
-  >
+  @for (dayItem of this.daysOfWeek; track $index) {
   <a
-    id="tuesday"
-    href="/tuesday"
-    [ngClass]="{ selectedLink: day === 'tuesday' }"
-    >TUES</a
+    id="{{ dayItem.toLowerCase() }}"
+    href="/{{ dayItem }}"
+    [ngClass]="{ selectedLink: dayItem === this.day }"
+    >{{ dayItem }}</a
   >
-  <a
-    id="wednesday"
-    href="/wednesday"
-    [ngClass]="{ selectedLink: day === 'wednesday' }"
-    >WED</a
-  >
-  <a
-    id="thursday"
-    href="/thursday"
-    [ngClass]="{ selectedLink: day === 'thursday' }"
-    >THUR</a
-  >
-  <a id="friday" href="/friday" [ngClass]="{ selectedLink: day === 'friday' }"
-    >FRI</a
-  >
-  <a
-    id="saturday"
-    href="/saturday"
-    [ngClass]="{ selectedLink: day === 'saturday' }"
-    >SAT</a
-  >
-  <a id="sunday" href="/sunday" [ngClass]="{ selectedLink: day === 'sunday' }"
-    >SUN</a
-  >
+  }
   <a
     id="summary"
-    href="/summary"
-    [ngClass]="{ selectedLink: day === 'summary' }"
+    href="/Summary"
+    [ngClass]="{ selectedLink: this.day === 'Summary' }"
     >SUMMARY</a
   >
 </nav>

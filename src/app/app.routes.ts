@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
 import { DayComponent } from './day/day.component';
 import { SummaryComponent } from './summary/summary.component';
+import { DaysOfWeek } from './shared/days-of-week';
 
 export const routes: Routes = [
-  { path: 'summary', component: SummaryComponent },
+  { path: 'Summary', component: SummaryComponent },
   { path: ':selectedDay', component: DayComponent },
-  { path: '', redirectTo: 'monday', pathMatch: 'full' },
-  { path: '**', redirectTo: 'monday' },
+  { path: '', redirectTo: DaysOfWeek.Monday, pathMatch: 'full' },
+  { path: '**', redirectTo: DaysOfWeek.Monday },
 ];

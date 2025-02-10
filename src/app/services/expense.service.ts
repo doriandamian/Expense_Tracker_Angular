@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Expense } from '../shared/expense.model';
+import { DaysOfWeek } from '../shared/days-of-week';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class ExpenseService {
     return this.expenses;
   }
 
-  getExpensesByDay(day: string): Expense[] {
+  getExpensesByDay(day: DaysOfWeek): Expense[] {
     return this.expenses.filter((expense) => expense.day === day);
   }
 

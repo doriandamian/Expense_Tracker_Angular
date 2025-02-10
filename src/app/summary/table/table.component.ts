@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { Expense } from '../../shared/expense.model';
+import { DaysOfWeek } from '../../shared/days-of-week';
 
 @Component({
   selector: 'app-table',
   standalone: true,
   imports: [],
   templateUrl: './table.component.html',
-  styleUrl: './table.component.css',
+  styleUrl: './table.component.scss',
 })
 export class TableComponent {
   @Input({ required: true }) expenses!: Expense[];
@@ -19,15 +20,7 @@ export class TableComponent {
 
   processExpenses(): WeeklyExpenses[] {
     const weeklyExpenses: WeeklyExpenses[] = [];
-    const days = [
-      'monday',
-      'tuesday',
-      'wednesday',
-      'thursday',
-      'friday',
-      'saturday',
-      'sunday',
-    ];
+    const days = Object.values(DaysOfWeek);
 
     days.forEach((day) => {
       const dayExpenses = this.expenses.filter(

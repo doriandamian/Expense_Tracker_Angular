@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ExpenseService } from '../services/expense.service';
 import { Expense } from '../shared/expense.model';
 import { NavigationComponent } from '../navigation/navigation.component';
+import { DaysOfWeek } from '../shared/days-of-week';
 
 @Component({
   selector: 'app-day',
@@ -17,10 +18,10 @@ import { NavigationComponent } from '../navigation/navigation.component';
     NavigationComponent,
   ],
   templateUrl: './day.component.html',
-  styleUrl: './day.component.css',
+  styleUrl: './day.component.scss',
 })
 export class DayComponent {
-  selectedDay!: string;
+  selectedDay!: DaysOfWeek;
   expenses: Expense[] = [];
   dailyTotal: number = 0;
   viewCreateExpense: boolean = false;
@@ -31,7 +32,8 @@ export class DayComponent {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
-      this.selectedDay = params.get('selectedDay')!;
+      let selectedDayString = params.get('selectedDay')!;
+      this.selectedDay = DaysOfWeek[selectedDayString as keyof typeof DaysOfWeek];
     });
     this.expenses = this.expenseService.getExpensesByDay(this.selectedDay);
     this.expenses.forEach((expense) => (this.dailyTotal += expense.amount));

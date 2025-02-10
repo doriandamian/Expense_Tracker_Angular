@@ -7,16 +7,17 @@ import {
 } from '@angular/forms';
 import { ExpenseService } from '../../services/expense.service';
 import { Expense } from '../../shared/expense.model';
+import { DaysOfWeek } from '../../shared/days-of-week';
 
 @Component({
   selector: 'app-create',
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './create.component.html',
-  styleUrl: './create.component.css',
+  styleUrl: './create.component.scss',
 })
 export class CreateComponent {
-  @Input({ required: true }) day!: string;
+  @Input({ required: true }) day!: DaysOfWeek;
   @Input({ required: true }) expenseNumber!: number;
   createExpenseForm!: FormGroup;
 

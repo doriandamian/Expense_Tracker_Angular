@@ -10,7 +10,7 @@ import { TableComponent } from './table/table.component';
   standalone: true,
   imports: [NavbarComponent, NavigationComponent, TableComponent],
   templateUrl: './summary.component.html',
-  styleUrl: './summary.component.css',
+  styleUrl: './summary.component.scss',
 })
 export class SummaryComponent {
   expenses: Expense[] = [];

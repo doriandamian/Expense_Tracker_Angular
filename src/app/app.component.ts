@@ -7,7 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'Expense_Tracker';
