@@ -24,7 +24,7 @@ export class TableComponent {
 
     days.forEach((day) => {
       const dayExpenses = this.expenses.filter(
-        (expense) => expense.day === day,
+        (expense) => expense.day === day
       );
       if (dayExpenses.length != 0) {
         const dailyExpense: WeeklyExpenses = {

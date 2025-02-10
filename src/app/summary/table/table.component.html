@@ -1,15 +1,14 @@
 <table>
   <tbody>
     @for (day of weeklyExpenses; track day.day) {
-      <tr>
-        <td [rowSpan]="day.expense.length + 1">{{ day.day }}</td>
-      </tr>
-      @for (expense of day.expense; track expense) {
-        <tr>
-          <td class="categoryTD">{{ expense.category }}</td>
-          <td class="amountTD">{{ expense.amount }}</td>
-        </tr>
-      }
-    }
+    <tr>
+      <td [rowSpan]="day.expense.length + 1">{{ day.day }}</td>
+    </tr>
+    @for (expense of day.expense; track expense) {
+    <tr>
+      <td class="categoryTD">{{ expense.category }}</td>
+      <td class="amountTD">{{ expense.amount }}</td>
+    </tr>
+    } }
   </tbody>
 </table>

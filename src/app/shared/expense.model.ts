@@ -1,4 +1,4 @@
-import { DaysOfWeek } from "./days-of-week";
+import { DaysOfWeek } from './days-of-week';
 
 export interface Expense {
   id: number;

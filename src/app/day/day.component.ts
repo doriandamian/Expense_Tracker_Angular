@@ -33,7 +33,8 @@ export class DayComponent {
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       let selectedDayString = params.get('selectedDay')!;
-      this.selectedDay = DaysOfWeek[selectedDayString as keyof typeof DaysOfWeek];
+      this.selectedDay =
+        DaysOfWeek[selectedDayString as keyof typeof DaysOfWeek];
     });
     this.expenses = this.expenseService.getExpensesByDay(this.selectedDay);
     this.expenses.forEach((expense) => (this.dailyTotal += expense.amount));

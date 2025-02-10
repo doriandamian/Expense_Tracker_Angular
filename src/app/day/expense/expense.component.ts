@@ -51,7 +51,7 @@ export class ExpenseComponent {
       this.expenseService.editExpense(
         this.expense.id,
         values.category,
-        values.amount,
+        values.amount
       );
       this.isEditing = false;
     }
